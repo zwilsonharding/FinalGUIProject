@@ -1,0 +1,24 @@
+	//Manly Years
+			manlyYears[0] = "The Great";
+			manlyYears[1] = "The Powerful";
+			manlyYears[2] = "VII";
+			manlyYears[3] = "XIV";
+			manlyYears[4] = "The Terrible";
+
+			manlyYears[5] = "The Destroyer Of Worlds";
+			manlyYears[6] = "The Machine";
+			manlyYears[7] = "The Unwavering";
+			manlyYears[8] = "The Baron of Biceps";
+			manlyYears[9] = "The Big Dog";
+
+			manlyYears[10] = "The Strong";
+			manlyYears[11] = "The Invincible";
+			manlyYears[12] = "The Undefeated";
+			manlyYears[13] = "XVIII";
+			manlyYears[14] = "The Man in Tights";
+
+			manlyYears[15] = "The Fierce";
+			manlyYears[16] = "Of The Land Of Manly-Men";
+			manlyYears[17] = "Who Scorns Pretty Flowers";
+			manlyYears[18] = "The Brave";
+			manlyYears[19] = "The Fearless";
