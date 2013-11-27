@@ -115,7 +115,7 @@ namespace FinalGUIProject
 			manlyDays[9] = "Maximus";
 			
 				//Manly Years
-			manlyYears[0] = "";
+			manlyYears[0] = "The Great";
 			manlyYears[1] = "";
 			manlyYears[2] = "";
 			manlyYears[3] = "";
