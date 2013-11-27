@@ -7,5 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}"/>
+    <Grid Background="Black">
+        <StackPanel Name="Input" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible">
+            <TextBlock Name="QueryTextBlock" Text="Your Birthdate is?:" HorizontalAlignment="Center" Foreground="White" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ComboBox Name="Month" ItemsSource="{Binding}"></ComboBox>
+                <ComboBox Name="Day" ItemsSource="{Binding}"></ComboBox>
+                <ComboBox Name="Year" ItemsSource="{Binding}"></ComboBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
 </Page>
