@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Background="Black">
+        <StackPanel Name="Input" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible">
+            <TextBlock Name="QueryTextBlock" Text="Your Birthdate is?:" HorizontalAlignment="Center" Foreground="White" FontSize="24"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ComboBox Name="Month" ItemsSource="{Binding}"></ComboBox>
+                <ComboBox Name="Day" ItemsSource="{Binding}"></ComboBox>
+                <ComboBox Name="Year" ItemsSource="{Binding}"></ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Name="Output" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
+            <TextBlock Name="NameAnnounceTextBlock" Text="Your Name is:" HorizontalAlignment="Center" Foreground="White" FontSize="24"/>
+            <TextBlock Name="NameTextBlock" Text="Random Name" HorizontalAlignment="Center" Foreground="White" FontSize="36"/>
+        </StackPanel>
+    </Grid>
+</Window>
