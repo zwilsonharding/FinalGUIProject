@@ -27,6 +27,8 @@ namespace FinalGUIProject
 		{
 			this.InitializeComponent();
 
+			this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+
 			initMonth();
 			initDay();
 			initYear();
@@ -71,7 +73,7 @@ namespace FinalGUIProject
 
 			//populate the combobox
 			List<string> list = new List<string>();
-			for (int i = 1; i < ndays; i++) {
+			for (int i = 1; i <= ndays; i++) {
 				list.Add(i.ToString());
 			}
 			days = list;
@@ -80,7 +82,7 @@ namespace FinalGUIProject
 		}
 
 		public void initYear() {
-			int minDate = 1900;
+			int minDate = 1950;
 			int maxDate = 2013;
 
 			//populate the combo box
@@ -116,7 +118,15 @@ namespace FinalGUIProject
 			Input.Visibility = Visibility.Collapsed;
 			LoadingPanel.Visibility = Visibility.Visible;
 			
-			this.Frame.Navigate(typeof(ResultsPage), (Application.Current as App).submit(Month.SelectedIndex, Day.SelectedIndex, Year.SelectedIndex));
+			this.Frame.Navigate(typeof(ResultsPage), (Application.Current as App).submit());
+		}
+
+		private void UpdateDayCount(object sender, SelectionChangedEventArgs e) {
+			initDay();
+		}
+
+		private void AboutButton_Click(object sender, RoutedEventArgs e) {
+			this.Frame.Navigate(typeof(AboutPage));
 		}
 	}
 }

@@ -46,11 +46,16 @@ namespace FinalGUIProject
 		private Dictionary<int, string> manlyDays;
 		private Dictionary<int, string> manlyYears;
 
+		//Selected Date Variables
+		public int selectedMonth;
+		public int selectedDay;
+		public int selectedYear;
+
 		//Other Private members
 		private enum SelectedDictionary {sillyDict, manlyDict};
 		SelectedDictionary selectedDictionary;
 
-		public string submit(int month, int day, int year) {
+		public string submit() {
 			string generatedName = "Sir Maximus The Great";
 
 			//figure out ranges to assign month, day, and year to

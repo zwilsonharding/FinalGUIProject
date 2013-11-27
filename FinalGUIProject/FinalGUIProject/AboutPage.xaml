@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="FinalGUIProject.ResultsPage"
+    x:Class="FinalGUIProject.AboutPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FinalGUIProject"
@@ -9,9 +9,8 @@
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel Name="Output" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible">
-            <TextBlock Name="NameAnnounceTextBlock" Text="Your Name is:" HorizontalAlignment="Center" Foreground="White" FontSize="24"/>
-            <TextBlock Name="NameTextBlock" Text="Random Name" HorizontalAlignment="Center" Foreground="White" FontSize="36"/>
-            <Button Name="GoBack" HorizontalAlignment="Center" Margin="10" Content="Try Another!" Click="GoBackButton_Click"/>
+            <TextBlock Text="Created by Zach Wilson and Barrett Montgomery" HorizontalAlignment="Center" Foreground="White" FontSize="36"/>
+            <Button Name="GoBack" HorizontalAlignment="Center" Margin="10" Content="Go Back" Click="GoBackButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>
