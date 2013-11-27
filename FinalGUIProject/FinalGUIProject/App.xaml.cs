@@ -31,11 +31,13 @@ namespace FinalGUIProject
 		{
 			this.InitializeComponent();
 			this.Suspending += OnSuspending;
+			
+			selectedDictionary = SelectedDictionary.sillyDict;
 
 			initializeDictionaries();
 		}
 
-		
+		//Dictionaries
 		private Dictionary<int, string> sillyMonths;
 		private Dictionary<int, string> sillyDays;
 		private Dictionary<int, string> sillyYears;
@@ -44,8 +46,40 @@ namespace FinalGUIProject
 		private Dictionary<int, string> manlyDays;
 		private Dictionary<int, string> manlyYears;
 
+		//Other Private members
+		private enum SelectedDictionary {sillyDict, manlyDict};
+		SelectedDictionary selectedDictionary;
+
+		public string submit(int month, int day, int year) {
+			string generatedName = "Sir Maximus The Great";
+
+			//figure out ranges to assign month, day, and year to
+
+			//run through dictionaries, assign to output string
+
+			return generatedName;
+		}
+		public void selectDictionary(int selection) {
+			if (selection == 1) {
+				selectedDictionary = SelectedDictionary.sillyDict;
+			}
+			else {
+				selectedDictionary = SelectedDictionary.manlyDict;
+			}
+		}
+
 		private void initializeDictionaries() {
 
+			//Instantiate the dictionaries
+			sillyMonths = new Dictionary<int, string>();
+			sillyDays = new Dictionary<int, string>();
+			sillyYears = new Dictionary<int, string>();
+
+			manlyMonths = new Dictionary<int, string>();
+			manlyDays = new Dictionary<int, string>();
+			manlyYears = new Dictionary<int, string>();
+
+			//Fill in the dictionaries
 			initializeSillyDicts();
 			initializeManlyDics();
 		}
@@ -150,7 +184,7 @@ namespace FinalGUIProject
 		protected override void OnLaunched(LaunchActivatedEventArgs args)
 		{
 			Frame rootFrame = Window.Current.Content as Frame;
-
+			
 			// Do not repeat app initialization when the Window already has content,
 			// just ensure that the window is active
 			if (rootFrame == null)

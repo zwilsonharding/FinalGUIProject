@@ -8,9 +8,10 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Name="Output" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Hidden">
+        <StackPanel Name="Output" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible">
             <TextBlock Name="NameAnnounceTextBlock" Text="Your Name is:" HorizontalAlignment="Center" Foreground="White" FontSize="24"/>
             <TextBlock Name="NameTextBlock" Text="Random Name" HorizontalAlignment="Center" Foreground="White" FontSize="36"/>
+            <Button Name="GoBack" Content="Try Another!" Click="GoBackButton_Click"/>
         </StackPanel>
     </Grid>
 </Page>

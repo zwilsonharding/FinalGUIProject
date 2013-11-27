@@ -29,6 +29,16 @@ namespace FinalGUIProject {
 		/// <param name="e">Event data that describes how this page was reached.  The Parameter
 		/// property is typically used to configure the page.</param>
 		protected override void OnNavigatedTo(NavigationEventArgs e) {
+			NameTextBlock.Text = e.Parameter.ToString();
+		}
+
+		private void GoBackButton_Click(object sender, RoutedEventArgs e) {
+			if (this.Frame.CanGoBack) {
+				this.Frame.GoBack();
+			}
+			else {
+				this.Frame.Navigate(typeof(MainPage));
+			}
 		}
 	}
 }

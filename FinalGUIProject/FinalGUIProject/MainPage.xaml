@@ -10,11 +10,31 @@
     <Grid Background="Black">
         <StackPanel Name="Input" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible">
             <TextBlock Name="QueryTextBlock" Text="Your Birthdate is?:" HorizontalAlignment="Center" Foreground="White" FontSize="24"/>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
                 <ComboBox Name="Month" ItemsSource="{Binding}"></ComboBox>
                 <ComboBox Name="Day" ItemsSource="{Binding}"></ComboBox>
                 <ComboBox Name="Year" ItemsSource="{Binding}"></ComboBox>
             </StackPanel>
+            <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Center" Click="Submit_Click"/>
+            
+        </StackPanel>
+        <StackPanel Name="LoadingPanel" Margin="10" Visibility="Collapsed">
+            <ProgressRing Name="LoadingRing" MinHeight="20" Width="40" Height="40" Margin="10" IsActive="True"/>
+            <TextBlock Text="Loading..." TextAlignment="Center"/>
         </StackPanel>
     </Grid>
+    <Page.TopAppBar>
+        <AppBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                    <Button Content="Silly Names" Width="140" Height="80" Click="SillyButton_Click"/>
+                    <Button Content="Manly Names" Width="140" Height="80" Click="ManlyButton_Click"/>
+            </StackPanel>
+           </Grid>
+        </AppBar>
+    </Page.TopAppBar>
 </Page>

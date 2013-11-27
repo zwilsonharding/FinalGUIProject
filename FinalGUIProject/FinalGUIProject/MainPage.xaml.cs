@@ -100,6 +100,23 @@ namespace FinalGUIProject
 		/// property is typically used to configure the page.</param>
 		protected override void OnNavigatedTo(NavigationEventArgs e)
 		{
+			Input.Visibility = Visibility.Visible;
+			LoadingPanel.Visibility = Visibility.Collapsed;
+		}
+
+		private void SillyButton_Click(object sender, RoutedEventArgs e) {
+			(Application.Current as App).selectDictionary(1);
+		}
+
+		private void ManlyButton_Click(object sender, RoutedEventArgs e) {
+			(Application.Current as App).selectDictionary(2);
+		}
+
+		private void Submit_Click(object sender, RoutedEventArgs e) {
+			Input.Visibility = Visibility.Collapsed;
+			LoadingPanel.Visibility = Visibility.Visible;
+			
+			this.Frame.Navigate(typeof(ResultsPage), (Application.Current as App).submit(Month.SelectedIndex, Day.SelectedIndex, Year.SelectedIndex));
 		}
 	}
 }
