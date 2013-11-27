@@ -11,9 +11,9 @@
         <StackPanel Name="Input" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible">
             <TextBlock Name="QueryTextBlock" Text="Your Birthdate is?:" HorizontalAlignment="Center" Foreground="White" FontSize="24"/>
             <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
-                <ComboBox Name="Month" ItemsSource="{Binding}" SelectionChanged="UpdateDayCount"></ComboBox>
-                <ComboBox Name="Day" ItemsSource="{Binding}"></ComboBox>
-                <ComboBox Name="Year" ItemsSource="{Binding}"></ComboBox>
+                <ComboBox Name="Month" ItemsSource="{Binding}" SelectionChanged="UpdateMonth"></ComboBox>
+                <ComboBox Name="Day" ItemsSource="{Binding}" SelectionChanged="UpdateDay"></ComboBox>
+                <ComboBox Name="Year" ItemsSource="{Binding}" SelectionChanged="UpdateYear"></ComboBox>
             </StackPanel>
             <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Center" Click="Submit_Click"/>
         </StackPanel>

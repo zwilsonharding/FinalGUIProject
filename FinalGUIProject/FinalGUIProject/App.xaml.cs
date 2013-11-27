@@ -30,7 +30,8 @@ namespace FinalGUIProject
 		public App()
 		{
 			this.InitializeComponent();
-			this.Suspending += OnSuspending;
+			this.Suspending += new SuspendingEventHandler(App_Suspending);
+			this.Resuming += new EventHandler<object>(App_Resuming);
 			
 			selectedDictionary = SelectedDictionary.sillyDict;
 
@@ -56,11 +57,20 @@ namespace FinalGUIProject
 		SelectedDictionary selectedDictionary;
 
 		public string submit() {
-			string generatedName = "Sir Maximus The Great";
-
+			string generatedName = "";
+			
 			//figure out ranges to assign month, day, and year to
-
 			//run through dictionaries, assign to output string
+			if (selectedDictionary == SelectedDictionary.sillyDict) {
+				generatedName += sillyMonths[selectedMonth % 4] + " ";
+				generatedName += sillyDays[selectedDay % 10] + " ";
+				generatedName += sillyYears[selectedYear % 20];
+			}
+			else {
+				generatedName += manlyMonths[selectedMonth % 4] + " ";
+				generatedName += manlyDays[selectedDay % 10] + " ";
+				generatedName += manlyYears[selectedYear % 20];
+			}
 
 			return generatedName;
 		}
@@ -155,28 +165,28 @@ namespace FinalGUIProject
 			
 				//Manly Years
 			manlyYears[0] = "The Great";
-			manlyYears[1] = "";
-			manlyYears[2] = "";
-			manlyYears[3] = "";
-			manlyYears[4] = "";
+			manlyYears[1] = "The Powerful";
+			manlyYears[2] = "VII";
+			manlyYears[3] = "XIV";
+			manlyYears[4] = "The Terrible";
 
-			manlyYears[5] = "";
-			manlyYears[6] = "";
-			manlyYears[7] = "";
-			manlyYears[8] = "";
-			manlyYears[9] = "";
+			manlyYears[5] = "The Destroyer Of Worlds";
+			manlyYears[6] = "The Machine";
+			manlyYears[7] = "The Unwavering";
+			manlyYears[8] = "The Baron of Biceps";
+			manlyYears[9] = "The Big Dog";
 
-			manlyYears[10] = "";
-			manlyYears[11] = "";
-			manlyYears[12] = "";
-			manlyYears[13] = "";
-			manlyYears[14] = "";
+			manlyYears[10] = "The Strong";
+			manlyYears[11] = "The Invincible";
+			manlyYears[12] = "The Undefeated";
+			manlyYears[13] = "XVIII";
+			manlyYears[14] = "The Man in Tights";
 
-			manlyYears[15] = "";
-			manlyYears[16] = "";
-			manlyYears[17] = "";
-			manlyYears[18] = "";
-			manlyYears[19] = "";
+			manlyYears[15] = "The Fierce";
+			manlyYears[16] = "Of The Land Of Manly-Men";
+			manlyYears[17] = "Who Scorns Pretty Flowers";
+			manlyYears[18] = "The Brave";
+			manlyYears[19] = "The Fearless";
 
 		}
 
@@ -220,18 +230,12 @@ namespace FinalGUIProject
 			Window.Current.Activate();
 		}
 
-		/// <summary>
-		/// Invoked when application execution is being suspended.  Application state is saved
-		/// without knowing whether the application will be terminated or resumed with the contents
-		/// of memory still intact.
-		/// </summary>
-		/// <param name="sender">The source of the suspend request.</param>
-		/// <param name="e">Details about the suspend request.</param>
-		private void OnSuspending(object sender, SuspendingEventArgs e)
-		{
-			var deferral = e.SuspendingOperation.GetDeferral();
-			//TODO: Save application state and stop any background activity
-			deferral.Complete();
+		async void App_Suspending(Object sender, Windows.ApplicationModel.SuspendingEventArgs e) {
+			//nothing to save
+		}
+
+		async void App_Resuming(Object sender, Object e) {
+			//nothing to load
 		}
 	}
 }

@@ -121,12 +121,26 @@ namespace FinalGUIProject
 			this.Frame.Navigate(typeof(ResultsPage), (Application.Current as App).submit());
 		}
 
-		private void UpdateDayCount(object sender, SelectionChangedEventArgs e) {
+		private void UpdateDayCount() {
 			initDay();
 		}
 
 		private void AboutButton_Click(object sender, RoutedEventArgs e) {
 			this.Frame.Navigate(typeof(AboutPage));
+		}
+
+		private void UpdateMonth(object sender, SelectionChangedEventArgs e) {
+			UpdateDayCount();
+
+			(Application.Current as App).selectedMonth = Month.SelectedIndex;
+		}
+
+		private void UpdateDay(object sender, SelectionChangedEventArgs e) {
+			(Application.Current as App).selectedDay = Day.SelectedIndex;
+		}
+
+		private void UpdateYear(object sender, SelectionChangedEventArgs e) {
+			(Application.Current as App).selectedYear = Year.SelectedIndex;
 		}
 	}
 }
